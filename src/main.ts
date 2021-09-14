@@ -35,7 +35,7 @@ bootstrap(app)
 		app.use(store).use(router).use(ElementPlus).mount("#app");
 	})
 	.catch((err: string) => {
-		console.error(`COOL-ADMIN 启动失败`, err);
+		console.error(`CHILLY-ADMIN 启动失败`, err);
 	});
 
 // 应用加载
