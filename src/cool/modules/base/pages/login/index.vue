@@ -1,7 +1,7 @@
 <template>
 	<div class="page-login">
 		<div class="box">
-			<img class="logo" src="../../static/images/logo.png" alt="" />
+			<p class="name">后端管理系统</p>
 			<p class="desc">CHILLY ADMIN是一款快速开发后台权限管理系统</p>
 
 			<el-form label-position="top" class="form" size="medium" :disabled="saving">
@@ -159,7 +159,13 @@ export default defineComponent({
 			height: 50px;
 			margin-bottom: 20px;
 		}
-
+		 .name {
+				font-size: 30px;
+				color: #fff;
+				letter-spacing: 5px;
+				font-weight: bold;
+				margin-bottom: 30px;
+			}
 		.desc {
 			color: #ccc;
 			font-size: 12px;

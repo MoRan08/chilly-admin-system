@@ -41,7 +41,7 @@ export default (): UserConfig => {
 				},
 
 				"/pro": {
-					target: "https://show.cool-admin.com",
+					target: "",
 					changeOrigin: true,
 					rewrite: (path) => path.replace(/^\/pro/, "/api")
 				}

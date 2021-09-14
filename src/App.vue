@@ -2,14 +2,14 @@
 	<el-config-provider :locale="locale">
 		<div class="preload" v-if="loading">
 			<div class="container">
-				<p class="name">CHILLY-ADMIN</p>
+				<p class="name">后端管理系统</p>
 				<div class="loading"></div>
 				<p class="title">正在加载菜单...</p>
 				<p class="sub-title">初次加载资源可能需要较多时间 请耐心等待</p>
 			</div>
 
 			<div class="footer">
-				<a href="https://cool-js.com/" target="_blank"> https://cool-js.com </a>
+				<!-- <a href="https://cool-js.com/" target="_blank"> https://cool-js.com </a> -->
 			</div>
 		</div>
 
