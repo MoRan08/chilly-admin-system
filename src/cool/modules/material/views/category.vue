@@ -34,6 +34,8 @@ import { CrudLoad, Upsert, Table } from "cl-admin-crud-vue3/types";
 import { useRefs } from "/@/core";
 
 export default defineComponent({
+	name: "material-category",
+
 	setup() {
 		const { refs, setRefs } = useRefs();
 		// 请求服务
@@ -41,7 +43,110 @@ export default defineComponent({
 
 		// 新增、编辑配置
 		const upsert = reactive<Upsert>({
-			items: []
+			width: "600px",
+			items: [
+				{
+					prop: "name",
+					label: "分类名称",
+					span: 24,
+					component: {
+						name: "el-input",
+						props: {
+							placeholder: "请输入分类名称"
+						}
+					},
+					rules: {
+						required: true,
+						message: "名称不能为空"
+					}
+				},
+				{
+					prop: "type",
+					value: 0,
+					label: "类型",
+					span: 24,
+					component: {
+						name: "el-radio-group",
+						options: [
+							{
+								label: "图片",
+								value: 0
+							},
+							{
+								label: "视频",
+								value: 1
+							},
+							{
+								label: "文本",
+								value: 2
+							},
+							{
+								label: "其它",
+								value: 3
+							}
+						]
+					}
+				},
+				{
+					prop: "px",
+					label: "尺寸参数",
+					span: 24,
+					component: {
+						name: "el-input",
+						props: {
+							placeholder: "请输入尺寸参数"
+						}
+					}
+				},
+				{
+					prop: "kb",
+					label: "大小限制",
+					span: 24,
+					component: {
+						name: "el-input",
+						props: {
+							placeholder: "请输入大小尺寸"
+						}
+					}
+				},
+				{
+					prop: "remark",
+					label: "描述",
+					span: 24,
+					component: {
+						name: "el-input",
+						type: "textarea"
+					}
+				},
+				{
+					prop: "sort",
+					label: "排序",
+					span: 24,
+					component: {
+						name: "el-input",
+						type: "number"
+					}
+				},
+				{
+					prop: "status",
+					value: 1,
+					label: "状态",
+					span: 24,
+					component: {
+						name: "el-radio-group",
+						options: [
+							{
+								label: "启用",
+								value: 1
+							},
+							{
+								label: "禁用",
+								value: 0
+							}
+						]
+					}
+				}
+			]
 		});
 
 		// 表格配置
@@ -64,7 +169,7 @@ export default defineComponent({
 							value: 1
 						},
 						{
-							label: "文档",
+							label: "文本",
 							value: 2
 						},
 						{
@@ -115,8 +220,7 @@ export default defineComponent({
 				},
 				{
 					label: "操作",
-					type: "op",
-					buttons: ["slot-add", "edit", "delete"]
+					type: "op"
 				}
 			]
 		});
